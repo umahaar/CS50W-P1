@@ -1,0 +1,1 @@
+HTML (HyperText Markup Language) is the standard markup language for creating web pages. It defines the structure and content of web documents using a system of tags and attributes. HTML is essential for building the foundation of every website on the internet today.

@@ -1,0 +1,24 @@
+{% extends "encyclopedia/base.html" %}
+
+{% block title %}
+    Edit {{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Edit {{ title }}</h1>
+    {% if error %}
+        <div style="color: red;">
+            {{ error }}
+        </div>
+    {% endif %}
+    <form action="{% url 'edit_page' title %}" method="post">
+        {% csrf_token %}
+        <div>
+            <label for="content">Content (Markdown):</label>
+            <textarea id="content" name="content" rows="10">{{ content }}</textarea>
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+        </div>
+    </form>
+{% endblock %}

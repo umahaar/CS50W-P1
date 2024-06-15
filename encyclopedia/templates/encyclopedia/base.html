@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Encyclopedia{% endblock %}</title>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Search</h2>
+        <form action="{% url 'search' %}" method="get">
+            <input type="text" name="q" placeholder="Search encyclopedia">
+            <button type="submit">Search</button>
+        </form>
+        <hr>
+        <h2>Actions</h2>
+        <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'new_page' %}">Create New Page</a></li>
+            <li><a href="{% url 'random_page' %}">Random Page</a></li>
+        </ul>
+        <!-- Other sidebar content -->
+    </div>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
